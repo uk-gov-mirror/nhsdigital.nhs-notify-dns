@@ -100,3 +100,15 @@ variable "cost_anomaly_threshold" {
   description = "The threshold percentage for cost anomaly detection"
   default     = 10
 }
+
+variable "csoc_log_forwarding" {
+  type        = bool
+  description = "Whether to forward logs to the CSOC account (requires additional setup in the CSOC account to create subscription filters and permissions for the logs to be forwarded)"
+  default     = true
+}
+
+variable "csoc_destination_account" {
+  type        = string
+  description = "value of the CSOC destination account, if applicable. If null, CSOC destination account will not be added as a resource in the logging policy"
+  default     = "000000000000"
+}
